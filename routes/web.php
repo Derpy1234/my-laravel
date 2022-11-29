@@ -31,6 +31,12 @@ Route::middleware('isLogin')->group(function () {
     Route::get('/create', [TodoController::class, 'create'])->name('create');
     Route::post('/store', [TodoController::class, 'store'])->name('store');
     Route::get('/data', [TodoController::class, 'data'])->name('data');
+    //path yang ada {} artinya path dinamis. path dinamis merupakan path yang datanya diisi dari database.
+    Route::get('/edit/{id}', [TodoController::class, 'edit'])->name('edit');
+    //method route buat update data itu pake patch/put
+    Route::patch('/update/{id}', [TodoController::class, 'update'])->name('update');
+    //method route buat delete data di database itu pake delete
+    Route::delete('/destroy/{id}', [TodoController::class, 'destroy'])->name('destroy');    
 });
 
 

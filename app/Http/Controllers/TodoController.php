@@ -99,9 +99,14 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Todo $todo)
+    public function edit($id)
     {
-        //
+        //parameter $id mengambil data path dinamis {id}
+        //ambil satu baris data yang memiliki value column id sama dengan data path dinamis id yang dikirim ke route
+        $todo = Todo::where('id' , $id)->first();
+        //kemudian arahkan/tampilan file view yang bernama edit.blade.php dan kirim data dari $todo ke file edit tersebut dengan bantuan compact
+        return view('edit', compact('todo'));
+
     }
 
     /**
@@ -111,9 +116,25 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update(Request $request, $id)
     {
-        //
+        //validasi
+        $request->validate([
+            'title' => 'required|min:3',
+            'date' => 'required',
+            'description' => 'required|min:8',
+        ]);
+    //cari baris data yang punya value column id sama dengan id yang dikirim ke route
+    Todo::where('id', $id)->update([
+        'title' => $request->title,
+        'date' => $request->date,
+        'description' => $request->description,
+        'user_id' => Auth::user()->id,
+        'status' => 0,
+    ]);
+    //kalau berhasil, arahkan ke halaman data dengan pemberitahuan berhasil
+    return redirect('/data')->with('successUpdate', 'berhasil menugubah data!');
+      
     }
 
     /**
@@ -122,8 +143,12 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Todo $todo)
+    public function destroy($id)
     {
         //
+        Todo::where('id', $id)->delete();
+
+        return redirect('/data')->with('successDelete', 'Berhasil menghapus data Todo!');
+        
     }
 }

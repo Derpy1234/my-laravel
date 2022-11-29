@@ -1,6 +1,16 @@
 @extends('layout')
 
 @section('content')
+@if (session('successUpdate'))
+    <div class="alert alert-success">
+        {{session('successUpdate')}}
+    </div>
+@endif 
+@if (session('successDelete'))
+    <div class="alert alert-danger">
+        {{session('successDelete')}}
+    </div>
+@endif    
 <br>
     <table class="table table-success table-striped table-bordered">
         <tr>
@@ -24,7 +34,12 @@
             <!-- konsep ternary, if statusnya 1 nampilin teks complated kalo 0 nampilin teks on-procces, status tuh boolean kan? cuman antara 1 atau 0 -->
             <td>{{ $todo['status'] ? 'Complated' : 'On-process'}}</td>
             <td>
-                <a href="#">Edit</a> | <a href="#">Hapus</a>
+                <a href="/edit/{{$todo['id']}}">Edit</a> | 
+                <form action="/destroy/{{$todo['id']}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Hapus</button>
+                </form>
             </td>
         </tr>
         @endforeach
