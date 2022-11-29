@@ -16,8 +16,8 @@
     @csrf
         <div class="d-flex flex-column">
             <label style="color: white;">Title</label>
-            <input type="text" name="tittle">
-            @error('tittle')
+            <input type="text" name="title">
+            @error('title')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

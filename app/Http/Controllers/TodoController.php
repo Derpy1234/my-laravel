@@ -50,7 +50,7 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $request ->validate([
-            'tittle' => 'required | min:3',
+            'title' => 'required | min:3',
             'date' => 'required',
             'description' => 'required | min:8',
         ]);
@@ -61,7 +61,7 @@ class TodoController extends Controller
         // user_id ngambil id dari fitur auth (history login), supaya tau itu todo punya siapa
         // column status kan boolean, jd kalo status si todo blm dikerjain = 0
         Todo::create([
-            'tittle' => $request->tittle,
+            'title' => $request->title,
             'date' => $request->date,
             'description' => $request->description,
             'user_id' => Auth::user()->id,

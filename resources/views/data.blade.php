@@ -17,7 +17,7 @@
         @foreach ($todos as $todo)
         <tr>
             <td>{{ $no++ }}</td>
-            <td>{{ $todo['tittle'] }}</td>
+            <td>{{ $todo['title'] }}</td>
             <td>{{ $todo['description'] }}</td>
             <!-- carbon : package date pada laravel, nntinya si date yang 2022-11-22 formatnya jadi 22 november 2022 -->
             <td>{{ \Carbon\Carbon::parse($todo['date'])->format('j F, Y') }}</td>
