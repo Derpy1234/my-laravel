@@ -50,8 +50,8 @@ label{
 }
  
 .tombol_login{
-	background: #63B3ED;
-	color: #000;
+	background: #578ff1;
+	color: rgb(244, 244, 244);
 	font-size: 11pt;
 	width: 100%;
 	border: none;
@@ -64,4 +64,24 @@ label{
 	color: #232323;
 	text-decoration: none;
 	font-size: 10pt;
+	
 } 
+
+.wowo{
+
+	background-color: #bf4040;
+	padding-right: 50px;
+	padding-left: 50px;
+	padding-bottom: 10px;
+	border-radius: 20px;
+	text-align: auto;
+	margin: 80px;
+	
+	
+	
+}
+
+.navbar-nav{
+	position: absolute;
+	right: 1%;
+}

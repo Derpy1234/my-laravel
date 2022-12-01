@@ -33,12 +33,14 @@
             <td>{{ \Carbon\Carbon::parse($todo['date'])->format('j F, Y') }}</td>
             <!-- konsep ternary, if statusnya 1 nampilin teks complated kalo 0 nampilin teks on-procces, status tuh boolean kan? cuman antara 1 atau 0 -->
             <td>{{ $todo['status'] ? 'Complated' : 'On-process'}}</td>
-            <td>
-                <a href="/edit/{{$todo['id']}}">Edit</a> | 
+           
+            <td class="d-flex">
+                <a href="/edit/{{$todo['id']}}"  class="btn btn-primary">Edit</a> 
                 <form action="/destroy/{{$todo['id']}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">Hapus</button>
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+               
                 </form>
             </td>
         </tr>

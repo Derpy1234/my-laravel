@@ -12,7 +12,7 @@
 			<input type="text" name="password" class="form_login" placeholder="Password ..">
  
 			<input type="submit" class="tombol_login" value="LOGIN">
-			<a href="register">don't have an account yet, sign up here !</a>
+			<a href="register"> sign up here! </a>
 		</form>
 		
 	</div> 

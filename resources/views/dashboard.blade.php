@@ -7,10 +7,13 @@
         </div>
     @endif 
 <br>
+
 <h1 style="color: white;">Selamat Datang di Halaman Dashboard</h1>
-<br>
-<h1 style="color: white;">Username : {{ auth()->user()->username }}</h1>
-<h1 style="color: white;">Email : {{ auth()->user()->email }}</h1>
+<div class="wowo">
+    <br>
+    <h5 style="color: white;">Username : {{ auth()->user()->username }}</h5>
+    <h5 style="color: white;">Email : {{ auth()->user()->email }}</h5>
+</div>
 
 @if(session('isGuest'))
 <h2>

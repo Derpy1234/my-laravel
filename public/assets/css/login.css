@@ -19,6 +19,7 @@ h1{
 	text-align: center;
 	/*ketebalan font*/
 	font-weight: 300;
+	
 }
  
 .tulisan_login{
@@ -66,3 +67,15 @@ label{
 	text-decoration: none;
 	font-size: 10pt;
 } 
+
+#aww{
+	padding-top: 500px;
+}
+
+a{
+	margin-right: 1%;
+}
+
+.awik{
+	text-align: center;
+}

@@ -3,7 +3,7 @@
 @section('content')
     <body>
         <div class="kotak_register">
-		<p class="tulisan_register"><strong>Sign Up</strong></p>
+		<p class="tulisan_register" style="font-size:30px";><strong>Sign Up</strong></p>
  
 			<form action="/register" method="POST">
 			@csrf
@@ -18,6 +18,8 @@
  
 			<input type="submit" class="tombol_login" value="REGISTER NOW">
 			<!-- <button type="submit">REGISTER NOW</button> -->
+			<a href="/" class="text-center text-black" id="aww" > 
+				<center>  <br> sign in here!</a> </center>
 		</form>
 
 		{{ session('berhasil') }}

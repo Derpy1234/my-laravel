@@ -16,5 +16,8 @@
             Password <input type="password" name="password" class="form_login" placeholder="Masukan Password">
             <br>
             <button type="submit" class="tombol_login">Login</button>
-            <a href="register">don't have an account yet, sign up here !</a>
+           <br>
+           <div class="awik">
+           <a href="register" class="text-center text-black" > 
+              <br> sign up here!</a> </div>
 @endsection
