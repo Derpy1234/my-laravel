@@ -13,9 +13,11 @@
 <body>
 <br>
 @if (Auth::check())
-    <nav class="navbar navbar-expand-lg bg-light w-100">
+    <nav class="navbar navbar-expand-lg w-100" style="background-color: aqua">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Todo App</a>
+        <a class="navbar-brand" href="#">
+            <img src="/assets/img/rmv.png" alt="" width="50px">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +25,7 @@
             <a class="nav-link" href="/data">Data</a>
             <a class="nav-link" href="/create">Create</a>
             <div class="navbar-nav">
-            <a class="nav-link btn btn-danger" href="/logout">Logout</a>
+            <a class="nav-link btn btn-danger text-white" href="/logout">Logout</a>
         </div>
         </div>
     </div>
