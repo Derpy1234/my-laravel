@@ -36,7 +36,8 @@ Route::middleware('isLogin')->group(function () {
     //method route buat update data itu pake patch/put
     Route::patch('/update/{id}', [TodoController::class, 'update'])->name('update');
     //method route buat delete data di database itu pake delete
-    Route::delete('/destroy/{id}', [TodoController::class, 'destroy'])->name('destroy');    
+    Route::delete('/destroy/{id}', [TodoController::class, 'destroy'])->name('destroy');
+    Route::patch('/complated/{id}', [TodoController::class, 'updateToComplated'])->name('update-complated');    
 });
 
 

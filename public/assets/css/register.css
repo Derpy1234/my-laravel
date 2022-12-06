@@ -11,7 +11,7 @@ body{
     background-size: cover;
 	font-family: sans-serif;
     background-repeat: no-repeat;
-    animation: pan 10s infinite alternate linear;
+    /* animation: pan 10s infinite alternate linear; */
 }
 
 h1{
@@ -34,6 +34,10 @@ h1{
 	/*meletakkan form ke tengah*/
 	margin: 100px auto;
 	padding: 30px 20px;
+}
+
+.sign{
+	margin-left: 110px;
 }
  
 label{

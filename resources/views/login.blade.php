@@ -9,6 +9,8 @@
 @endif
     <div class="kotak_login">
         <p class="tulisan_login"><strong>Sign In</strong></p>
+        <div class="alert alert-danger">
+            <p class="alert alert-danger">{{ session('error') }}</p>
             <form action="{{ route('login-baru') }}" method="POST">
             @csrf
             Email <input type="email" name="email" class="form_login"  placeholder="Masukan Email">
@@ -20,4 +22,5 @@
            <div class="awik">
            <a href="register" class="text-center text-black" > 
               <br> sign up here!</a> </div>
+            
 @endsection

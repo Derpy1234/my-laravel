@@ -11,6 +11,7 @@
         {{session('successDelete')}}
     </div>
 @endif    
+
 <br>
     <table class="table table-success table-striped table-bordered">
         <tr>
@@ -34,14 +35,20 @@
             <!-- konsep ternary, if statusnya 1 nampilin teks complated kalo 0 nampilin teks on-procces, status tuh boolean kan? cuman antara 1 atau 0 -->
             <td>{{ $todo['status'] ? 'Complated' : 'On-process'}}</td>
            
-            <td class="d-flex">
+            <td class="d-flex" style="gap:10px;">
                 <a href="/edit/{{$todo['id']}}"  class="btn btn-primary">Edit</a> 
                 <form action="/destroy/{{$todo['id']}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>
-               
                 </form>
+                @if ($todo['status'] == 0)
+                <form action="/complated\{{$todo['id']}}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn btn-warning">Complated</button>
+                </form>
+                @endif    
             </td>
         </tr>
         @endforeach

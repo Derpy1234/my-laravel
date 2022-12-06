@@ -153,4 +153,19 @@ class TodoController extends Controller
         return redirect('/data')->with('successDelete', 'Berhasil menghapus data Todo!');
         
     }
+
+    public function UpdateToComplated(Request $request, $id)
+    {
+        //cari data yang akan diupdate
+        //baru setelahnya data di update ke database melalui model
+        //status tipenya boolean (0/1) : 0 (on-process) & 1 (complated)
+        //carbon : package laravel yang mengelola segala hal yanng berhubungan dengan date
+        //now() : mengambil tanggal hari ini 
+        Todo::where('id', '=', $id)->update([
+            'status' => 1,
+            'done_time' => \Carbon\Carbon::now(),
+        ]);
+       //jika berhasil, akan dibalikan ke halaman awal (halaman tempat button complated berada). kembalikan dengan pemberitahuan
+        return redirect()->back()->with('done', 'ToDo telah selesai dikerjakan!');
+    }
 }

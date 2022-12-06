@@ -11,7 +11,7 @@ body{
     background-size: cover;
 	font-family: sans-serif;
     background-repeat: no-repeat;
-	animation: pan 10s infinite alternate linear;
+	/* animation: pan 10s infinite alternate linear; */
 	
 }
 
@@ -68,9 +68,6 @@ label{
 	font-size: 10pt;
 } 
 
-#aww{
-	padding-top: 500px;
-}
 
 a{
 	margin-right: 1%;
