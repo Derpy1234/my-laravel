@@ -9,7 +9,7 @@
 @endif
     <div class="kotak_login">
         <p class="tulisan_login"><strong>Sign In</strong></p>
-        <div class="alert alert-danger">
+        <div>
             <p class="alert alert-danger">{{ session('error') }}</p>
             <form action="{{ route('login-baru') }}" method="POST">
             @csrf
