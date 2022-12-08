@@ -3,6 +3,7 @@
 @section('content')
 <br>
     <form action="/store" method="POST" style="max-width: 500px; margin: auto;">
+        @csrf
     <!-- @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -13,7 +14,6 @@
         </div>
     @endif -->
     <!-- untuk mengirim data ke controller yang nantinya di tampung oleh Request $request -->
-    @csrf
         <div class="d-flex flex-column">
             <label style="color: white;">Title</label>
             <input type="text" name="title">
