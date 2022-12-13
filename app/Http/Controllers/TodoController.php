@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class TodoController extends Controller
 {
@@ -71,7 +73,8 @@ class TodoController extends Controller
         ]);
 
         // kalau berhasil tambah ke db, bakal diarahin ke halaman dashboard dengan menampilkan pemberitahuan 
-        return redirect ('/dashboard')->with('addTodo', 'Berhasil menambahkan data Todo!');
+        Alert::toast('Berhasil Menambahkan Data', 'success');
+        return redirect ('/dashboard');
     }
 
     public function data()
@@ -135,7 +138,7 @@ class TodoController extends Controller
         'status' => 0,
     ]);
     //kalau berhasil, arahkan ke halaman data dengan pemberitahuan berhasil
-    return redirect('/data')->with('successUpdate', 'berhasil menugubah data!');
+    return redirect('/data')->with('successUpdate', 'berhasil mengubah data!');
       
     }
 
@@ -166,6 +169,7 @@ class TodoController extends Controller
             'done_time' => \Carbon\Carbon::now(),
         ]);
        //jika berhasil, akan dibalikan ke halaman awal (halaman tempat button complated berada). kembalikan dengan pemberitahuan
-        return redirect()->back()->with('done', 'ToDo telah selesai dikerjakan!');
+       Alert::toast('Berhasil', 'success');
+       return redirect()->back();
     }
 }

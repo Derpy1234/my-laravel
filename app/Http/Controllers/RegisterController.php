@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class RegisterController extends Controller
 {
@@ -20,6 +22,7 @@ class RegisterController extends Controller
         User::create($validateDate);
 
         // return back()->with('berhasil', 'Register Berhasil');
-        return redirect('/')->with('successRegister', 'Berhasil menambahkan akun, silahkan login');
+        Alert::toast('Register berhasil', 'success');
+        return redirect('/');
     }
 }
